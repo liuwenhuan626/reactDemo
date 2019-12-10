@@ -10,10 +10,11 @@ class App extends Component{
                 <Switch>
                     {
                         adminRoutes.map(item=>{
-                            return <Route key={item.pathname} path={item.pathname} render={(routerProps)=><item.component {...routerProps}/>}/>
+                            return <Route key={item.pathname} path={item.pathname} render={(routerProps)=><item.component {...routerProps} exact/>}/>
                         })
                     }
                     <Redirect to={adminRoutes[0].pathname} from="/admin" exact/>
+                    <Redirect to="/404"/>
                 </Switch>
             </Frame>
         )

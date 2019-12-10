@@ -5,10 +5,10 @@ import App from "./App"
 import {mainRoutes} from "./routes"
 ReactDOM.render(<Router>
     <Switch>
-        <Route path="/admin" render={(routerProps)=><App {...routerProps}/>}/>
+        <Route path="/admin" render={(routerProps)=><App {...routerProps} exact/>}/>
         {
             mainRoutes.map(item=>{
-                return <Route key={item.pathname} path={item.pathname} component={item.component}/>
+                return <Route key={item.pathname} path={item.pathname} component={item.component} exact/>
             })
         }
         <Redirect to="/admin" from="/" exact/>

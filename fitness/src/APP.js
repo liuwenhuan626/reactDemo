@@ -4,6 +4,7 @@ import Frame from "./components/Frame"
 import {adminRoutes} from "./routes"
 class App extends Component{
     render(){
+        console.log(adminRoutes);
         return(
             <Frame>
                 <Switch>
